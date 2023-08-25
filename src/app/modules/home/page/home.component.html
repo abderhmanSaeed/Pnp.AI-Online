@@ -1,0 +1,11 @@
+<div id="content">
+  <div>
+    <h1>Projects</h1>
+  </div>
+
+  <ngx-masonry>
+    <div ngxMasonryItem class="masonry-item" *ngFor="let project of projects$ | async">
+      <app-project-item [project]="project"></app-project-item>
+   </div>
+  </ngx-masonry>
+</div>
