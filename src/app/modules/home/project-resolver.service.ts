@@ -7,9 +7,9 @@ import {
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { Project } from 'src/app/data/schema/project';
-import { ProjectService } from 'src/app/data/service/project.service';
 
+import { Project } from '@data/schema/project';
+import { ProjectService } from '@data/service/project.service';
 
 @Injectable({
   providedIn: 'root'

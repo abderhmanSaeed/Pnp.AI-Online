@@ -1,23 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ThemeService } from 'src/app/core/service/theme.service';
-import { environment } from 'src/environments/environment';
 
+import { ThemeService } from '@core/service/theme.service';
+import { environment } from '@env';
+import { CONFIG } from '@app/shared/configs';
 
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.css']
+  styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
   public version = environment.version;
-  public repoUrl = 'https://github.com/mathisGarberg/angular-folder-structure';
+  public repoUrl = 'https://github.com/kamin3/pnpai-backend-offline-v2.git';
 
-  public isDarkTheme$: Observable<boolean> | undefined;
+  public isDarkTheme$: Observable<boolean>;
 
   navItems = [
-    { link: '/dashboard/home', title: 'Home' },
-    { link: '/about', title: 'About' },
+    { link: CONFIG.dashboard.children.home.route, title: CONFIG.dashboard.children.home.name },
+    { link: CONFIG.about.route, title: CONFIG.about.name },
     { link: '/contact', title: 'Contact' }
   ];
 

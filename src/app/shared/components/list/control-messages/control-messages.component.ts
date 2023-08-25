@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { UntypedFormControl, AbstractControl, FormControl } from '@angular/forms';
-import { ValidationService } from 'src/app/shared/services/validation.service';
+import { UntypedFormControl, AbstractControl } from '@angular/forms';
+import { ValidationService } from '@app/shared/services/validation.service';
 
 @Component({
   selector: 'app-control-messages',
@@ -8,11 +8,10 @@ import { ValidationService } from 'src/app/shared/services/validation.service';
   styleUrls: ['./control-messages.component.scss']
 })
 export class ControlMessagesComponent {
-  @Input() control: UntypedFormControl | AbstractControl = new FormControl(); // Initialize with a new FormControl instance or default value
-
+  @Input() control: UntypedFormControl | AbstractControl;
   @Input() labelName?: string;
 
-  get errorMessage(): string | undefined {
+  get errorMessage(): boolean {
     for (const propertyName in this.control.errors) {
       if (
         this.control.errors.hasOwnProperty(propertyName) &&
@@ -28,6 +27,4 @@ export class ControlMessagesComponent {
 
     return undefined;
   }
-
-
 }

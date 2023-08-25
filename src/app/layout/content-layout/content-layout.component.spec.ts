@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ContentLayoutComponent } from './content-layout.component';
 
@@ -6,10 +6,15 @@ describe('ContentLayoutComponent', () => {
   let component: ContentLayoutComponent;
   let fixture: ComponentFixture<ContentLayoutComponent>;
 
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [ContentLayoutComponent]
+      }).compileComponents();
+    })
+  );
+
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [ContentLayoutComponent]
-    });
     fixture = TestBed.createComponent(ContentLayoutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

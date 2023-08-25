@@ -7,8 +7,8 @@ import {
 } from '@angular/forms';
 import { tap, delay, finalize, catchError } from 'rxjs/operators';
 import { of, Subscription } from 'rxjs';
-import { AuthService } from 'src/app/core/service/auth.service';
 
+import { AuthService } from '@core/service/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -16,9 +16,9 @@ import { AuthService } from 'src/app/core/service/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnDestroy {
-  error!: string;
-  isLoading!: boolean;
-  loginForm!: UntypedFormGroup;
+  error: string;
+  isLoading: boolean;
+  loginForm: UntypedFormGroup;
 
   private sub = new Subscription();
 

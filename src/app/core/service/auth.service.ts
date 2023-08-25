@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { of, Observable, throwError } from 'rxjs';
-import { User } from 'src/app/data/schema/user';
 
+import { User } from '@data/schema/user';
 
 interface LoginContextInterface {
   username: string;
@@ -10,7 +10,7 @@ interface LoginContextInterface {
 }
 
 const defaultUser = {
-  username: 'Mathis',
+  username: 'PnpAI',
   password: '12345',
   token: '12345'
 };
@@ -19,7 +19,7 @@ const defaultUser = {
   providedIn: 'root'
 })
 export class AuthService {
-  token: string | undefined;
+  token: string;
 
   login(loginContext: LoginContextInterface): Observable<User> {
     const isDefaultUser =

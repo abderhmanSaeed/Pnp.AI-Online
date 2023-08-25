@@ -7,6 +7,5 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SpinnerComponent {
   @Input() public isLoading = false;
-  @Input() public message: string = ''; // Initialize with an empty string or default value
-
+  @Input() public message: string;
 }

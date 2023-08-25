@@ -1,1 +1,11 @@
-<p>content-layout works!</p>
+<div [class]="currentActiveTheme$ | async">
+  <div class="mat-app-background">
+    <app-nav></app-nav>
+
+      <div class="container">
+        <router-outlet></router-outlet>
+      </div>
+
+    <app-footer></app-footer>
+  </div>
+</div>

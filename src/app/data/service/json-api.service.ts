@@ -6,15 +6,13 @@ import data from './json/data.json';
   providedIn: 'root'
 })
 export class JsonApiService {
-
   get(url: string): Observable<any> {
     switch (url) {
       case '/projects':
         return of(data.projects);
       default:
         const id = url.substring(url.lastIndexOf('/') + 1);
-        return of(data.projects[+id]); // Use the '+' operator to convert id to a number
+        return of(data.projects[id]);
     }
   }
-
 }

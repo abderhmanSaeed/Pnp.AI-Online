@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Project } from 'src/app/data/schema/project';
-import { ProjectService } from 'src/app/data/service/project.service';
 
-
+import { ProjectService } from '@data/service/project.service';
+import { Project } from '@data/schema/project';
 
 @Component({
   selector: 'app-home',
